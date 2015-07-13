@@ -1,6 +1,6 @@
 var Animal = require('../src/animal.js'),
 Zoo = require('../src/zoo.js'),
-animal,
+animals,
 zoo;
 
 describe('Zoo', function(){
@@ -14,29 +14,30 @@ describe('Zoo', function(){
 
   describe('#changeLocation', function(){
     it('should change locations', function(){
-
+      expect(zoo.changeLocation('indy')).toEqual('indy');
     });
   });
 
   describe('#open', function(){
     it('should change status to open', function(){
-
+      expect(zoo.open()).toEqual('open');
     });
   });
 
 
   describe('#isOpen', function(){
     it('should see if the zoo is open', function(){
-
+      zoo.open();
+      expect(zoo.isOpen()).toEqual('Open!');
     });
     it('should see if the zoo is closed', function(){
-
+      expect(zoo.isOpen()).toEqual('Zoo is closed');
     });
   });
 
   describe('#animals', function(){
     it('should initially be empty', function(){
-
+      expect(zoo.animals).toEqual([]);
     });
   });
 
@@ -64,5 +65,3 @@ describe('Zoo', function(){
     });
   });
 });
-
-
