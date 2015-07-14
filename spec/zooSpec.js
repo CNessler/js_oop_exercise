@@ -44,18 +44,23 @@ describe('Zoo', function(){
 
   describe('#addAnimal', function(){
     it('should only add an animal to the animals array when the zoo is open', function(){
-
+      zoo.status === 'open';
+      expect(zoo.addAnimal(pig)).toEqual(['Pig'])
     });
     it('should add an animal to the animals array', function(){
-
+      zoo.status === 'open';
+      expect(zoo.addAnimal(lion)).toEqual(['lion']);
     });
 
     it('should only add instances of animals', function(){
-
+      zoo.status === 'open';
+      expect(zoo.addAnimal(lion)).toEqual(['lion']);
     });
 
     it('should not add duplicates', function(){
-
+      expect(zoo.addAnimal(pig)).toEqual(['Pig']);
+      expect(zoo.addAnimal(lion)).toEqual(['Pig', 'lion']);
+      expect(zoo.addAnimal(pig)).toEqual(['Pig', 'lion']);
     });
   });
 
