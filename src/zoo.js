@@ -30,13 +30,15 @@ Zoo.prototype.animals = function () {
 
 Zoo.prototype.addAnimal = function (animal) {
   if (this.status = 'open'){
-    if (this.animal instanceof Animal){
-      if (this.animals.indexof(animal)<0){
-        this.animals.push(animal);
+    if (animal instanceof Animal){
+      // console.log(this.animals.indexof(animal));
+      if (this.animals.indexOf(animal.kind)<0){
+        this.animals.push(animal.kind);
   }
   }
   }
         return this.animals;
+}
   // if (this.status = 'open'){
   //   this.animals.push(animal.kind);
   //   return this.animals;
@@ -55,7 +57,6 @@ Zoo.prototype.addAnimal = function (animal) {
   // } else {
   //   return false;
   // }
-}
   // if (this.status = 'open'){
   //     Zoo.animals.push(animal.kind);
   //   if (this.animal instanceof Animal){
@@ -69,4 +70,9 @@ Zoo.prototype.addAnimal = function (animal) {
   //     }
   //   }
     //indexof .kind
+Zoo.prototype.removeAnimal = function (animal) {
+  console.log(this.animals);
+  this.animals.push(animal.kind)
+  return this.animals.splice(1);
+}
 module.exports=Zoo;

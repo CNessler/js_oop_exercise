@@ -58,6 +58,7 @@ describe('Zoo', function(){
     });
 
     it('should not add duplicates', function(){
+      zoo.status = 'open';
       expect(zoo.addAnimal(pig)).toEqual(['Pig']);
       expect(zoo.addAnimal(lion)).toEqual(['Pig', 'lion']);
       expect(zoo.addAnimal(pig)).toEqual(['Pig', 'lion']);
@@ -66,7 +67,7 @@ describe('Zoo', function(){
 
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
-
+      expect(zoo.removeAnimal(pig)).toEqual([]);
     });
   });
 });
