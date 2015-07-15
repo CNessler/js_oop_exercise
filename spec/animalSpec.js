@@ -33,13 +33,15 @@ describe('Animal', function(){
 
    describe('#wakeUp', function(){
     it('should change state to awake', function(){
-      expect(animal.wakeUp()).toEqual(true);
+      animal.wakeUp();
+      expect(animal.awake).toEqual(true);
     });
   });
 
   describe('#sleep', function(){
     it('should initially be sleeping', function(){
-      expect(animal.sleep()).toEqual(false);
+      animal.sleep();
+      expect(animal.awake).toEqual(false);
     });
   });
 

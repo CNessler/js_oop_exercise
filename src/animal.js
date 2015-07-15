@@ -19,15 +19,15 @@ Animal.prototype.growUp = function () {
 }
 
 Animal.prototype.awake = function () {
-  return this.awake;
+  this.awake;
 }
 
 Animal.prototype.wakeUp = function () {
-  return this.awake = true;
+  this.awake = true;
 }
 
 Animal.prototype.sleep = function () {
-  return this.awake;
+  this.awake;
 }
 
 Animal.prototype.feed = function () {
